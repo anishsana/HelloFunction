@@ -7,7 +7,13 @@ public class Hello implements RequestHandler<String, String> {
 
 	@Override
 	public String handleRequest(String input, Context context) {
-		String output = "Hello, " + input + "! Checking invocation - 1";
+		String output = "";
+		if (input.isEmpty()) {
+			output = "No input provided";
+
+		} else {
+			output = "Hello, " + input + "! Checking invocation - 1";
+		}
 		return output;
 	}
 
